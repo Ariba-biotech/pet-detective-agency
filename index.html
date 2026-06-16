@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Detective Agency</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span class="cloud cloud-one"></span>
+    <span class="cloud cloud-two"></span>
+    <span class="cloud cloud-three"></span>
+  </div>
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Junior Mystery Club</p>
+      <h1>🐾 Pet Detective Agency</h1>
+      <p class="tagline">Explore Pawston City, collect clues, and reunite lost pets with their families.</p>
+    </div>
+    <div class="hero-actions" aria-label="Game controls">
+      <button id="soundToggle" class="pill-button" type="button" aria-pressed="true">🔊 Sound On</button>
+      <button id="resetGame" class="pill-button danger" type="button">Reset Save</button>
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="status-card" aria-labelledby="detectiveStatus">
+      <div class="badge" id="badgeIcon" aria-hidden="true">🥉</div>
+      <div>
+        <h2 id="detectiveStatus">Detective Status</h2>
+        <p id="rankName">Bronze Badge Rookie</p>
+        <div class="progress-wrap" aria-label="Badge progress">
+          <div id="badgeProgress" class="progress-bar"></div>
+        </div>
+        <p id="caseStats">0 pets found • 0 clues collected</p>
+      </div>
+    </section>
+
+    <section class="case-board" aria-labelledby="currentCaseHeading">
+      <div class="case-copy">
+        <p class="eyebrow">Current Case</p>
+        <h2 id="currentCaseHeading">Choose a missing pet poster</h2>
+        <p id="caseDescription">Tap a poster to begin your next cheerful city mystery.</p>
+        <div id="clueTray" class="clue-tray" aria-live="polite"></div>
+      </div>
+      <div class="pet-portrait" id="petPortrait" aria-hidden="true">🕵️‍♀️</div>
+    </section>
+
+    <section class="layout-grid">
+      <aside class="posters" aria-labelledby="posterHeading">
+        <h2 id="posterHeading">Missing Pet Quests</h2>
+        <div id="questList" class="quest-list"></div>
+      </aside>
+
+      <section class="map-card" aria-labelledby="mapHeading">
+        <div class="map-title-row">
+          <h2 id="mapHeading">Cartoon City Map</h2>
+          <p id="mapHint">Pick a case, then visit city spots to search for clues.</p>
+        </div>
+        <div id="cityMap" class="city-map" role="list" aria-label="Pawston City locations"></div>
+      </section>
+    </section>
+
+    <section class="notebook" aria-labelledby="notebookHeading">
+      <h2 id="notebookHeading">Detective Notebook</h2>
+      <p id="notebookText">Your notes will appear here as you discover clues and solve cases.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
